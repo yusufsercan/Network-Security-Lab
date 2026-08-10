@@ -128,7 +128,7 @@ anonsurf stop     # Restores native iptables routing rules & network settings
 
 ---
 
-## 6. HTTP Protocol & Web Architecture Fundamentals
+## 6. HTTP,HTTPS Protocol & Web Architecture Fundamentals
 
 ### What is HTTP & HTTPS?
 Web applications rely on standardized client-server protocols to transmit resources (HTML documents, images, scripts, videos):
@@ -157,64 +157,7 @@ A URL is an instruction specifying how and where to access a specific resource o
 
 ---
 
-### HTTP Request Methods
-HTTP methods define the desired action to be performed on a given resource:
 
-* **GET**: Used to retrieve data or web pages from a server without modifying state (e.g., reading an article).
-* **POST**: Used to submit data to the server to create new entities or records (e.g., submitting forms, user registration).
-* **PUT**: Used to update existing resources or replace data on the target server (e.g., updating user profiles or email addresses).
-* **DELETE**: Used to request the removal of specific records or resources from the server (e.g., deleting an uploaded media file).
-
----
-
-### HTTP Status Codes
-Status codes are 3-digit numerical responses sent by the server indicating the outcome of an HTTP request:
-
-#### Status Code Ranges
-| Code Range | Category | Description |
-| :--- | :--- | :--- |
-| **100–199** | Informational | Request received, process continuing. |
-| **200–299** | Success | Action successfully received, understood, and accepted. |
-| **300–399** | Redirection | Further action must be taken to complete the request. |
-| **400–499** | Client Error | Request contains bad syntax or cannot be fulfilled by client. |
-| **500–599** | Server Error | Server failed to fulfill an apparently valid request. |
-
-#### Critical Status Codes Reference
-* `200 OK`: Request succeeded and payload returned.
-* `201 Created`: Resource successfully created via POST/PUT.
-* `301 Moved Permanently`: Target URL permanently relocated.
-* `302 Found`: Temporary redirection to a different URL.
-* `400 Bad Request`: Malformed request syntax sent by client.
-* `401 Unauthorized`: Authentication credentials missing or invalid.
-* `403 Forbidden`: Authenticated client lacks permissions for the resource.
-* `404 Not Found`: Requested resource does not exist on the server.
-* `405 Method Not Allowed`: HTTP method blocked for the target endpoint.
-* `500 Internal Server Error`: Server encountered an unexpected exception.
-* `503 Service Unavailable`: Server down due to overload or maintenance.
-
----
-
-### HTTP Headers Analysis
-
-#### Request Headers (Client $\rightarrow$ Server)
-* **Host**: Specifies the domain name of the target server.
-* **User-Agent**: Contains client browser engine, OS version, and system architecture parameters.
-* **Content-Length**: Defines the size of the request body in bytes.
-* **Accept-Encoding**: Indicates compression algorithms supported by client (e.g., `gzip`, `br`).
-* **Cookie**: Sends stored session tokens and parameters back to the server.
-
-#### Response Headers (Server $\rightarrow$ Client)
-* **Set-Cookie**: Instructs the client browser to store a session token or identifier locally.
-* **Cache-Control**: Specifies caching policies for client and intermediate proxies.
-* **Content-Type**: Declares the MIME type of the returned payload (e.g., `text/html`, `application/json`).
-* **Content-Encoding**: Specifies the compression method applied to the response payload.
-
----
-
-### Session Management & Cookie Mechanics
-* **Statelessness**: The HTTP protocol is inherently stateless; each request is executed independently without native context retention.
-* **Session Tracking**: Servers issue unique identifier tokens via the `Set-Cookie` response header upon valid authentication.
-* **State Persistence**: The client browser automatically appends stored key-value pairs to subsequent requests inside the `Cookie` header to maintain persistent session state.
 
 
 
