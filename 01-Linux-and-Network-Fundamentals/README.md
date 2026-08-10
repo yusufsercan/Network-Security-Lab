@@ -125,7 +125,63 @@ anonsurf status   # Verifies active Tor service execution
 anonsurf stop     # Restores native iptables routing rules & network settings
 ```
 
+---
 
+## 6. HTTP, HTTPS Protocol & Web Architecture Fundamentals
+
+### What is HTTP & HTTPS?
+* **HTTP (HyperText Transfer Protocol - Port 80)**: Standard protocol used for communicating with web servers to transfer webpage assets (HTML, images, scripts). Transmits data in unencrypted plain text.
+* **HTTPS (HyperText Transfer Protocol Secure - Port 443)**: Encrypted variant of HTTP. Uses TLS/SSL encryption to secure data in transit and ensure cryptographic server authentication.
+
+> **Note:** Status codes, request methods, headers, and cookie mechanics work identically on both HTTP and HTTPS. The only difference is that HTTPS encrypts the payload within a TLS tunnel.
+
+---
+
+### HTTP Request Methods
+* **GET**: Retrieves data or web pages from the server without modifying state.
+* **POST**: Submits data to the server to create new records (e.g., login, registration forms).
+* **PUT**: Updates or replaces an existing resource on the target server.
+* **DELETE**: Requests the removal of a specific record/resource from the server.
+
+---
+
+### HTTP Status Codes
+
+#### Code Ranges
+| Range | Category | Description |
+| :--- | :--- | :--- |
+| **100–199** | Informational | Process continuing. |
+| **200–299** | Success | Request successfully received and fulfilled. |
+| **300–399** | Redirection | Further action needed to complete request. |
+| **400–499** | Client Error | Faulty request syntax or unauthorized client access. |
+| **500–599** | Server Error | Exception or failure on the server side. |
+
+#### Critical Status Codes
+* `200 OK`: Request succeeded.
+* `201 Created`: Resource successfully created via POST/PUT.
+* `301 Moved Permanently`: Target URL permanently relocated.
+* `302 Found`: Temporary redirection to a different URL.
+* `400 Bad Request`: Malformed request syntax.
+* `401 Unauthorized`: Missing or invalid authentication credentials.
+* `403 Forbidden`: Authenticated client lacks permission for the resource.
+* `404 Not Found`: Requested resource does not exist on the server.
+* `405 Method Not Allowed`: HTTP method blocked for the target endpoint.
+* `500 Internal Server Error`: Server encountered an unexpected exception.
+* `503 Service Unavailable`: Server down due to overload or maintenance.
+
+---
+
+### HTTP Headers & Session Management
+
+#### Core Headers
+* **Host** *(Request)*: Specifies the target domain name.
+* **User-Agent** *(Request)*: Identifies the client browser and OS parameters.
+* **Content-Type** *(Response)*: Declares the format of the payload (`text/html`, `application/json`).
+* **Set-Cookie** *(Response)*: Server instructs the browser to store a session token.
+* **Cookie** *(Request)*: Client sends stored session tokens back to the server to maintain state.
+
+#### Statelessness & Cookies
+HTTP is inherently **stateless** (each request is executed independently). Servers issue session tokens via `Set-Cookie` upon login, and the browser automatically attaches this token in subsequent requests using the `Cookie` header to keep the session alive.
 
 
 
