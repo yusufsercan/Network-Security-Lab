@@ -123,6 +123,78 @@ anonsurf start    # Enables Tor tunnel, closes IPv6 leaks, and spoofs DNS
 anonsurf myip     # Queries and verifies current external exit IP & country
 anonsurf status   # Verifies active Tor service execution
 anonsurf stop     # Restores native iptables routing rules & network settings
+```
+---
+
+## 6. HTTP Protocol & Web Architecture Fundamentals
+
+### What is HTTP & HTTPS?
+Web applications rely on standardized client-server protocols to transmit resources (HTML documents, images, scripts, videos):
+
+* **HTTP (HyperText Transfer Protocol)**: Developed between 1989–1991 by Tim Berners-Lee and his team. Defines the set of rules used for communicating with web servers to transfer webpage data (HTML, Images, Videos, etc.). Transmits data in unencrypted plain text.
+* **HTTPS (HyperText Transfer Protocol Secure)**: The secure version of HTTP. Encrypts transmitted data to prevent unauthorized interception/eavesdropping and provides cryptographic assurance that communication is established with the legitimate web server.
+
+---
+
+### What is a URL? (Uniform Resource Locator)
+A URL is an instruction specifying how and where to access a specific resource on the Internet:
+
+  Scheme      User:Password        Host/Domain     Port    Path       Query String  Fragment
+  ───────  ───────────────────────  ──────────────  ────  ───────────  ────────────  ────────
+  http://  user:password@           tryhackme.com   :80   /view-room   ?id=1         #task3
+
+* **Scheme**: Specifies the communication protocol used to access the resource (e.g., HTTP, HTTPS, FTP).
+* **User**: Optional basic authentication credentials embedded directly within the URL.
+* **Host**: The domain name or IP address of the target web server.
+* **Port**: The network port for connection (Defaults: 80 for HTTP, 443 for HTTPS; custom range: 1–65535).
+* **Path**: The file name or location of the resource on the target web server.
+* **Query String**: Extra parameters sent to the requested path following `?` (e.g., `?id=1`).
+* **Fragment**: Client-side anchor following `#` pointing directly to a specific section within the loaded page.
+
+---
+
+### HTTP Requests and Responses Breakdown
+
+#### Basic HTTP Request Anatomy
+A basic HTTP request contains the Request Method, Target Path, Protocol Version, and Headers:
+
+GET / HTTP/1.1
+Host: tryhackme.com
+User-Agent: Mozilla/5.0 Firefox/87.0
+Referer: [https://tryhackme.com/](https://tryhackme.com/)
+(empty line)
+
+* **Line 1**: Sends a `GET` request for the root homepage path `/` using protocol version `HTTP/1.1`.
+* **Line 2 (`Host`)**: Specifies the target domain (`tryhackme.com`).
+* **Line 3 (`User-Agent`)**: Identifies the client browser software (`Firefox v87`).
+* **Line 4 (`Referer`)**: Specifies the referring web page URL that directed the browser to this resource.
+* **Line 5 (Blank Line)**: A mandated empty line signaling the end of the HTTP request headers.
+
+#### Basic HTTP Response Anatomy
+The web server processes the request and responds with a Status Line, Headers, and Content Body:
+
+HTTP/1.1 200 OK
+Server: nginx/1.15.8
+Date: Fri, 09 Apr 2021 13:14:03 GMT
+Content-Type: text/html
+Content-Length: 98
+
+<html>
+<head>
+    <title>TryHackMe</title>
+</head>
+<body>
+    Welcome To TryHackMe.com
+</body>
+</html>
+
+* **Line 1**: Confirms `HTTP/1.1` protocol usage and returns the HTTP status code `200 OK` (successful execution).
+* **Line 2 (`Server`)**: Identifies the server software name and version (`nginx/1.15.8`).
+* **Line 3 (`Date`)**: Server timestamp of the response execution.
+* **Line 4 (`Content-Type`)**: Specifies the format of the returned payload (`text/html`, `images`, `pdf`, `XML`, etc.).
+* **Line 5 (`Content-Length`)**: Specifies the byte length of the response payload to ensure no data is missing.
+* **Line 6 (Blank Line)**: A mandated empty line signaling the end of HTTP response headers.
+* **Lines 7–14**: The requested HTML payload displayed in the client browser.
 
 
 
