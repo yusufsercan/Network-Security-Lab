@@ -88,7 +88,41 @@ sudo nano /etc/resolv.conf
 # Define reliable public secure resolvers:
 nameserver 8.8.8.8    # Google Public Primary DNS
 nameserver 1.1.1.1    # Cloudflare Privacy-Focused Primary DNS
+```
+---
 
+## 5. Anonymity Tunnels & Dark Web Architecture
+
+### Privacy Mechanisms Comparison
+
+| Technology | Operational Layer | Traffic Encapsulation |
+| :--- | :--- | :--- |
+| **Proxy** | Application Layer (HTTP/SOCKS) | Forwards browser requests through an intermediary; no system-wide encryption. |
+| **VPN** | Network Layer (IPsec/OpenVPN) | Encapsulates all OS traffic inside a single point-to-point encrypted tunnel. |
+| **Tor Network** | Multi-Layer Relay Circuit | Routes encrypted data packets through 3 voluntary onion nodes worldwide. |
+
+### Tor Onion Routing Protocol Mechanics
+Data packets are wrapped in multiple encryption layers (like an onion) and passed through 3 distinct nodes:
+1. **Entry (Guard) Node:** Knows the client's real IP address, but cannot decrypt the final packet payload or destination.
+2. **Middle Relay Node:** Acts as an isolated intermediate hop; knows neither the source client IP nor the final destination.
+3. **Exit Node:** Decrypts the final encryption layer and delivers the request to the target web server or `.onion` service.
+
+### Anonsurf Transparent Proxy System
+Anonsurf enforces system-wide transparent proxying through the Tor overlay network by manipulating `iptables` rules:
+
+```bash
+# Repository Installation Protocol
+git clone [https://github.com/Und3rf10w/kali-anonsurf.git](https://github.com/Und3rf10w/kali-anonsurf.git)
+cd kali-anonsurf
+apt install secure-delete                   # Secure file erasure utility
+dpkg -i --force-depends kali-anonsurf.deb  # Force package installation
+apt install -f                              # Resolve broken dependencies
+
+# Operational Commands
+anonsurf start    # Enables Tor tunnel, closes IPv6 leaks, and spoofs DNS
+anonsurf myip     # Queries and verifies current external exit IP & country
+anonsurf status   # Verifies active Tor service execution
+anonsurf stop     # Restores native iptables routing rules & network settings
 
 
 
