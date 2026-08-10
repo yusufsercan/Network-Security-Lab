@@ -49,6 +49,7 @@ A MAC address consists of 12 hexadecimal digits (6 octets). The first 3 octets c
 
 ### MAC Spoofing Procedures
 To bypass MAC Filtering controls or maintain anonymity during audit engagements:
+
 ```bash
 # Automated MAC Spoofing
 macchanger -r wlan0     # Assigns a randomized MAC address
@@ -57,3 +58,6 @@ macchanger -r wlan0     # Assigns a randomized MAC address
 ifconfig wlan0 down
 ifconfig wlan0 hw ether 00:11:22:33:44:55
 ifconfig wlan0 up
+
+
+
