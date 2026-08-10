@@ -57,34 +57,3 @@ macchanger -r wlan0     # Assigns a randomized MAC address
 ifconfig wlan0 down
 ifconfig wlan0 hw ether 00:11:22:33:44:55
 ifconfig wlan0 up
-
-
----
-
-## 3. DHCP Protocol & Network Weaknesses
-
-Dynamic Host Configuration Protocol (DHCP) automatically assigns IPv4 leases, gateway pointers, and DNS resolvers within a network segment:
-
-### Core Vulnerability Vectors
-- **DHCP Starvation Attack:** An attacker floods the local switch/router with randomized MAC addresses requesting IP leases, exhausting the available DHCP pool and causing a Denial of Service (DoS) for new legitimate endpoints.
-- **Rogue DHCP Server:** An unauthorized DHCP server is deployed on the network segment to respond faster than the legitimate default gateway, pushing malicious Default Gateway and DNS parameters to hijack client traffic paths.
-
----
-
-## 4. DNS Security & Manual Configuration
-
-Domain Name System (DNS) operates as the Internet's directory service, resolving human-readable domain names into logical IPv4/IPv6 addresses.
-
-### Resolv.conf System Integration
-In Linux operating systems, system-wide name resolution directives are maintained within `/etc/resolv.conf`:
-
-```bash
-# Inspect current active resolvers
-cat /etc/resolv.conf
-
-# Modify resolver configuration with root privileges
-sudo nano /etc/resolv.conf
-
-# Define reliable public secure resolvers:
-nameserver 8.8.8.8    # Google Public Primary DNS
-nameserver 1.1.1.1    # Cloudflare Privacy-Focused Primary DNS
