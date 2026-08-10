@@ -124,38 +124,7 @@ anonsurf myip     # Queries and verifies current external exit IP & country
 anonsurf status   # Verifies active Tor service execution
 anonsurf stop     # Restores native iptables routing rules & network settings
 ```
----
 
----
-
-## 6. HTTP,HTTPS Protocol & Web Architecture Fundamentals
-
-### What is HTTP & HTTPS?
-Web applications rely on standardized client-server protocols to transmit resources (HTML documents, images, scripts, videos):
-
-* **HTTP (HyperText Transfer Protocol)**: Developed between 1989–1991 by Tim Berners-Lee and his team. Defines the set of rules used for communicating with web servers to transfer webpage data (HTML, Images, Videos, etc.). Transmits data in unencrypted plain text.
-* **HTTPS (HyperText Transfer Protocol Secure)**: The secure version of HTTP. Encrypts transmitted data to prevent unauthorized interception/eavesdropping and provides cryptographic assurance that communication is established with the legitimate web server.
-
----
-
-### What is a URL? (Uniform Resource Locator)
-A URL is an instruction specifying how and where to access a specific resource on the Internet.
-
-#### Full URL Example:
-`http://user:password@tryhackme.com:80/view-room?id=1#task3`
-
-#### URL Component Breakdown:
-| Component | Example Value | Description |
-| :--- | :--- | :--- |
-| **Scheme** | `http://` | Specifies the communication protocol (e.g., HTTP, HTTPS, FTP). |
-| **User:Password** | `user:password@` | Optional basic authentication credentials embedded in the URL. |
-| **Host / Domain** | `tryhackme.com` | The domain name or IP address of the target web server. |
-| **Port** | `:80` | Network port for connection (Defaults: 80 for HTTP, 443 for HTTPS). |
-| **Path** | `/view-room` | The file name or logical location of the resource on the server. |
-| **Query String** | `?id=1` | Extra parameters sent to the path following `?`. |
-| **Fragment** | `#task3` | Client-side anchor pointing to a specific section on the page. |
-
----
 
 
 
