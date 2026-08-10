@@ -19,17 +19,22 @@ This module contains core system administration concepts, network architecture p
 ## 1. Linux Administration Essentials
 
 ### Privilege Management & File Manipulation
-- **`sudo su`:** Elevates standard user session privileges to the root superuser account.
-- **`rm -rf <path>`:**
-  - `-r` *(Recursive)*: Traverses directory trees to remove nested items.
-  - `-f` *(Force)*: Suppresses confirmation prompts and overrides write protections.
-- **`nano <filename>`:** Terminal-based text editor (`Ctrl+O` to write-out, `Ctrl+X` to exit).
-- **`ls -la`:** Lists directory contents including hidden system configuration files (`.dotfiles`).
-- **`passwd`:** Modifies user account authentication credentials.
+* `sudo su`: Elevates standard user session privileges to the root superuser account.
+* `rm -rf <path>`:
+  * `-r` (*Recursive*): Traverses directory trees to remove nested items.
+  * `-f` (*Force*): Suppresses confirmation prompts and overrides write protections.
+* `nano <filename>`: Terminal-based text editor (`Ctrl+O` to write-out/save, `Ctrl+X` to exit).
+* `ls -la`: Lists directory contents with detailed permissions, file sizes, and hidden configuration files (`.dotfiles`).
+* `passwd`: Modifies user account authentication credentials.
 
 ### Package Management & Inspection
-- **`apt search <query>`:** Queries local cache for available package repositories.
-- **`history -c`:** Flushes the current shell session's command history buffer to erase local terminal trails.
+* `apt search <query>`: Queries local cache for available package repositories.
+* `history -c`: Flushes the current shell session's command history buffer to erase local terminal trails.
+
+### Network Inspection & Interfaces
+* `ifconfig`: Displays active local network interfaces, IP addresses, netmasks, and MAC addresses.
+* `iwconfig`: Used specifically for inspecting and configuring **wireless network interfaces** (e.g., Wi-Fi parameters, operation modes, SSID, frequency).
+* `curl ifconfig.me`: Queries an external service over HTTPS to determine the host's current **public IP address**.
 
 ---
 
