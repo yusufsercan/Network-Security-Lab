@@ -12,6 +12,7 @@ This module contains core system administration concepts, network architecture p
 3. [DHCP Protocol & Network Weaknesses](#3-dhcp-protocol--network-weaknesses)
 4. [DNS Security & Manual Configuration](#4-dns-security--manual-configuration)
 5. [Anonymity Tunnels & Dark Web Architecture](#5-anonymity-tunnels--dark-web-architecture)
+6. [HTTP, HTTPS Protocol & Web Architecture Fundamentals](#6-http-https-protocol--web-architecture-fundamentals)
 
 ---
 
