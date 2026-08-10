@@ -139,19 +139,21 @@ Web applications rely on standardized client-server protocols to transmit resour
 ---
 
 ### What is a URL? (Uniform Resource Locator)
-A URL is an instruction specifying how and where to access a specific resource on the Internet:
+A URL is an instruction specifying how and where to access a specific resource on the Internet.
 
-  Scheme      User:Password        Host/Domain     Port    Path       Query String  Fragment
-  ───────  ───────────────────────  ──────────────  ────  ───────────  ────────────  ────────
-  http://  user:password@           tryhackme.com   :80   /view-room   ?id=1         #task3
+#### Full URL Example:
+`http://user:password@tryhackme.com:80/view-room?id=1#task3`
 
-* **Scheme**: Specifies the communication protocol used to access the resource (e.g., HTTP, HTTPS, FTP).
-* **User**: Optional basic authentication credentials embedded directly within the URL.
-* **Host**: The domain name or IP address of the target web server.
-* **Port**: The network port for connection (Defaults: 80 for HTTP, 443 for HTTPS; custom range: 1–65535).
-* **Path**: The file name or location of the resource on the target web server.
-* **Query String**: Extra parameters sent to the requested path following `?` (e.g., `?id=1`).
-* **Fragment**: Client-side anchor following `#` pointing directly to a specific section within the loaded page.
+#### URL Component Breakdown:
+| Component | Example Value | Description |
+| :--- | :--- | :--- |
+| **Scheme** | `http://` | Specifies the communication protocol (e.g., HTTP, HTTPS, FTP). |
+| **User:Password** | `user:password@` | Optional basic authentication credentials embedded in the URL. |
+| **Host / Domain** | `tryhackme.com` | The domain name or IP address of the target web server. |
+| **Port** | `:80` | Network port for connection (Defaults: 80 for HTTP, 443 for HTTPS). |
+| **Path** | `/view-room` | The file name or logical location of the resource on the server. |
+| **Query String** | `?id=1` | Extra parameters sent to the path following `?`. |
+| **Fragment** | `#task3` | Client-side anchor pointing to a specific section on the page. |
 
 ---
 
