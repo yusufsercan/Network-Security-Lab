@@ -126,6 +126,8 @@ anonsurf stop     # Restores native iptables routing rules & network settings
 ```
 ---
 
+---
+
 ## 6. HTTP Protocol & Web Architecture Fundamentals
 
 ### What is HTTP & HTTPS?
