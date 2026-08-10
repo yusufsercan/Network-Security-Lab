@@ -1,25 +1,25 @@
-# ??? Network Security & Protocol Analysis Lab
+# 🛡️ Network Security & Protocol Analysis Lab
 
 This repository contains practical network security experiments, protocol behavior analyses, packet inspection reports, and defensive architecture notes developed during my personal study sessions.
 
-> ?? **Disclaimer:** All activities and laboratories documented in this repository were conducted in strictly controlled, isolated virtual environment setups (VMware/VirtualBox) for educational and security research purposes only.
+> ⚠️ **Disclaimer:** All activities and laboratories documented in this repository were conducted in strictly controlled, isolated virtual environment setups (VMware/VirtualBox) for educational and security research purposes only.
 
 ---
 
-## ?? Laboratory Modules
+## 📂 Laboratory Modules
 
-### ?? 01. Linux & Network Fundamentals
+### 🔹 01. Linux & Network Fundamentals
 - **System Administration:** Essential Kali Linux management, file system navigation, and process controls.
 - **Addressing & Identity:** MAC (Layer 2) vs. IP (Layer 3) separation, OUI fingerprinting, static vs. dynamic leases.
 - **Anonymity Infrastructure:** OpenVPN tunneling, Tor onion routing mechanics, and system-wide transparent proxying (Anonsurf).
 
-### ?? 02. Wireless Security & 802.11 Protocols
+### 🔹 02. Wireless Security & 802.11 Protocols
 - **Radio Frequency Spectrum:** 2.4 GHz vs. 5 GHz band propagation, channel overlap, and CSMA/CA carrier sensing.
 - **Interface Modes:** Managed (Station) vs. Monitor (Promiscuous) frame capturing mechanics.
 - **Reconnaissance & OSINT:** Probe request tracking, Rogue AP risks, and 802.11 management frame vulnerabilities (Deauth).
 - **Cryptographic Evaluation:** WEP IV statistical computation vs. WPA/WPA2 4-Way Handshake dictionary evaluations.
 
-### ?? 03. MITM & Protocol Behaviors
+### 🔹 03. MITM & Protocol Behaviors
 - **Network Enumeration:** ARP scanning (Netdiscover), port state analysis (Nmap), and critical service identification.
 - **Poisoning Mechanics:** Stateless ARP resolution flaws, bi-directional routing, and IP forwarding bridges.
 - **Traffic Analysis:** Packet inspection via Wireshark, automated sniffing with Bettercap, and PCAP logging.
@@ -27,7 +27,7 @@ This repository contains practical network security experiments, protocol behavi
 
 ---
 
-## ??? Environment & Tooling
+## 🛠️ Environment & Tooling
 
 * **Environment:** Kali Linux (Attacker VM), Windows 7/10 (Target VMs)
 * **Hypervisor:** VMware Workstation (Isolated NAT/Bridged)
