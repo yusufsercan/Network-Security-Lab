@@ -2,8 +2,7 @@
 
 This repository contains practical network security experiments, protocol behavior analyses, packet inspection reports, and defensive architecture notes developed during my personal study sessions.
 
-> ⚠️ **Disclaimer:** All activities and laboratories documented in this repository were conducted in strictly controlled, isolated virtual environment setups (VMware/VirtualBox) for educational and security research purposes only.
-
+> ⚠️ **Disclaimer & Educational Scope:** This repository consists purely of personal study notes, laboratory observations, and research documentation recorded while following cybersecurity courses and academic training materials. It is strictly created for educational purposes and self-development, with no offensive intent, warranty, or claim of professional certification. All experiments were performed within strictly controlled, isolated virtual environment setups (VMware/VirtualBox).
 ---
 
 ## 📂 Laboratory Modules
