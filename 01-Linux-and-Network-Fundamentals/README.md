@@ -1,6 +1,8 @@
 # 🐧 01. Linux & Network Fundamentals
 
-This module contains core system administration concepts, network architecture principles, identity management at OSI Layer 2/3, and operational privacy/anonymity mechanisms.
+This module contains core system administration concepts, network architecture principles, identity management at OSI Layer 2/3, operational privacy/anonymity mechanisms, and web protocol fundamentals.
+
+> **Note / Disclaimer:** The contents of this module consist purely of personal study notes, laboratory observations, and quick-reference cheatsheets recorded during my cybersecurity training. They are compiled solely for self-development and personal revision, and do not claim to be authoritative academic documentation or official reference materials.
 
 ---
 
