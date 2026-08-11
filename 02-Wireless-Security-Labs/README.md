@@ -12,6 +12,7 @@ This module covers wireless network interface mechanics, RF spectrum monitoring,
 2. [Operating Modes: Managed vs. Monitor Mode](#2-operating-modes-managed-vs-monitor-mode)
 3. [Interface Management with airmon-ng](#3-interface-management-with-airmon-ng)
 4. [Passive Reconnaissance with airodump-ng](#4-passive-reconnaissance-with-airodump-ng)
+5. [Wireless Encryption Protocols & Security Analysis (WEP vs. WPA/WPA2)](#5-wireless-encryption-protocols--security-analysis-wep-vs-wpawpa2)
 
 ---
 
