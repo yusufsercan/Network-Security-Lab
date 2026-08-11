@@ -13,6 +13,7 @@ This module covers wireless network interface mechanics, RF spectrum monitoring,
 3. [Interface Management with airmon-ng](#3-interface-management-with-airmon-ng)
 4. [Passive Reconnaissance with airodump-ng](#4-passive-reconnaissance-with-airodump-ng)
 5. [Wireless Encryption Protocols & Security Analysis (WEP vs. WPA/WPA2)](#5-wireless-encryption-protocols--security-analysis-wep-vs-wpawpa2)
+6. [airodump-ng Telemetry & Display Field Reference](#6-airodump-ng-telemetry--display-field-reference)
 
 ---
 
