@@ -81,5 +81,54 @@ airodump-ng wlan0mon
 
 # Targeted capture on a specific Access Point and Channel
 airodump-ng --bssid <TARGET_AP_MAC> --channel <CHANNEL_NO> -w <OUTPUT_PREFIX> wlan0mon
+```
+
+---
+
+## 5. Wireless Encryption Protocols & Security Analysis (WEP vs. WPA/WPA2)
+
+Understanding the underlying cryptographic mechanisms and inherent attack vectors of wireless encryption protocols is critical for vulnerability assessments and secure network architecture design.
+
+### Protocol Comparison Matrix
+
+| Feature / Metric | WEP (Wired Equivalent Privacy) | WPA / WPA2 (Wi-Fi Protected Access) |
+| :--- | :--- | :--- |
+| **Security Status** | Deprecated & Critically Insecure | Current Standard (WPA2-AES / WPA3) |
+| **Encryption Algorithm** | RC4 (Stream Cipher with weak 24-bit IV) | AES-CCMP / TKIP |
+| **Cracking Mechanism** | **Statistical / Mathematical Analysis**: Exploits weak IV collision; no wordlist required. | **Dictionary / Brute-Force Attacks**: Requires 4-Way Handshake capture (`EAPOL`) and wordlists. |
+| **Primary Vulnerability** | Short Initialization Vector (IV) reuse over high data volumes. | Weak passphrase selection (susceptible to offline dictionary attacks). |
+| **Mitigation / Remedy** | Upgrade hardware to support WPA2/WPA3 immediately. | Enforce strong, high-entropy passphrases (12+ mixed characters). |
+
+---
+
+### Cryptographic Analysis & Attack Mechanics
+
+#### 1. WEP (Wired Equivalent Privacy) — "Paper Lock Analogy"
+* **Mechanism**: Uses the RC4 stream cipher combined with a short 24-bit Initialization Vector (IV) appended to the pre-shared key.
+* **Flaw**: Due to the limited size of 24-bit IVs, a busy network rapidly reuses identical IV values. An attacker capturing a high volume of data frames (`#Data`) can analyze IV collisions using tools like `aircrack-ng` to mathematically calculate the secret key without needing to guess passwords.
+* **Analogy**: WEP is like a paper vault. Regardless of how complex the key is, the structure itself is inherently weak. Attackers bypass the key entirely by tearing through the cryptographic structure.
+
+#### 2. WPA / WPA2 (Wi-Fi Protected Access) — "Steel Safe Analogy"
+* **Mechanism**: Utilizes robust encryption algorithms (AES-CCMP) alongside dynamic key management protocols (TKIP/CCMP).
+* **Flaw**: The underlying encryption cannot be mathematically broken in a feasible timeframe. Instead, attacks target human error in passphrase generation via offline dictionary testing.
+* **Attack Workflow**:
+  1. Sniff raw 802.11 frames using `airodump-ng` until a client connects (or force re-authentication via deauth frames).
+  2. Capture the **4-Way Handshake** (`EAPOL` key exchange).
+  3. Perform an offline dictionary attack (`aircrack-ng` or `hashcat` with wordlists like `rockyou.txt`) by computing passphrase hashes and matching them against the captured handshake.
+* **Analogy**: WPA2 is like a steel vault. The structure is impenetrable; the only entry vector is stealing the key exchange (Handshake) and testing key combinations (Wordlist) until a match is found.
+
+---
+
+### Security Recommendations & Hardening Checklist
+* **Discontinue WEP Usage**: WEP must never be deployed in operational environments.
+* **Enforce Strong Passphrase Policies**: Since WPA/WPA2 security relies entirely on key complexity, passphrases must avoid dictionary words and enforce complex, high-entropy strings (e.g., 16+ characters including symbols, numbers, and mixed-case letters).
+* **Migrate to WPA3**: Where hardware permits, transition to WPA3 to leverage Simultaneous Authentication of Equals (SAE), rendering offline dictionary attacks ineffective.
+
+
+
+
+
+
+
 
 
