@@ -59,3 +59,26 @@ airmon-ng start wlan0
 airmon-ng stop wlan0mon# 02 - Wireless Security Labs
 
 Lab notes and documentation.
+```
+
+---
+
+## 4. Passive Reconnaissance with airodump-ng
+
+`airodump-ng` is an 802.11 packet capture tool used to scan the RF spectrum, enumerate nearby Access Points, identify associated client stations, and log 4-Way WPA/WPA2 Handshakes.
+
+### Key Capabilities:
+* **AP Enumeration**: Displays BSSID (MAC Address), PWR (Signal Strength), Beacons, Data Frames, Channel (CH), Encryption Type (WPA2, WPA3), Cipher (CCMP, TKIP), and ESSID (Network Name).
+* **Station Tracking**: Maps connected client MAC addresses (STATION) to their corresponding Access Points (BSSID).
+* **Handshake Capture**: Sniffs raw 802.11 authentication frames to capture WPA/WPA2 EAPOL key exchanges for offline analysis.
+
+### Standard Capture Syntax:
+
+```bash
+# Scan all available 2.4GHz channels for initial RF discovery
+airodump-ng wlan0mon
+
+# Targeted capture on a specific Access Point and Channel
+airodump-ng --bssid <TARGET_AP_MAC> --channel <CHANNEL_NO> -w <OUTPUT_PREFIX> wlan0mon
+
+
