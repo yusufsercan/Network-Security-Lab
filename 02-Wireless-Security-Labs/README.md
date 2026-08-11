@@ -125,6 +125,42 @@ Understanding the underlying cryptographic mechanisms and inherent attack vector
 * **Migrate to WPA3**: Where hardware permits, transition to WPA3 to leverage Simultaneous Authentication of Equals (SAE), rendering offline dictionary attacks ineffective.
 
 
+  ---
+
+## 6. airodump-ng Telemetry & Display Field Reference
+
+When running `airodump-ng`, the interface splits into two primary display sections: **Access Points (Upper Table)** and **Client Stations (Lower Table)**. Interpreting these telemetric fields correctly is critical for effective wireless target selection and frame analysis.
+
+### A) Access Points Section (Upper Table)
+
+| Field | Technical Description & Field Meaning |
+| :--- | :--- |
+| **BSSID** | **Basic Service Set Identifier**: The physical MAC address of the Access Point's wireless radio interface. |
+| **PWR** | **Signal Power Level**: Measured in dBm (e.g., `-30` indicates excellent signal strength, `-80` indicates weak/distant signal). Values closer to `0` represent stronger RF signals. |
+| **Beacons** | **Beacon Frames**: Management frames broadcasted by the AP (~10 times per second) to announce its presence and capabilities. |
+| **#Data** | **Captured Data Frames**: The total count of captured wireless data packets (including IVs for WEP cracking). |
+| **CH** | **Channel**: The specific radio frequency channel (1–14 for 2.4GHz) on which the AP is currently transmitting. |
+| **MB** | **Maximum Bandwidth / Speed**: Maximum supported data rate by the AP (e.g., `54e` indicates 54 Mbps with short preamble support). |
+| **ENC** | **Encryption Protocol**: The security protocol used (`WPA2`, `WPA3`, `WEP`, or `OPN` for Open/Unencrypted networks). |
+| **CIPHER** | **Cipher Suite**: The underlying cryptographic algorithm used to encrypt payload data (`CCMP`/AES, `TKIP`, `WEP40`, `WEP104`). |
+| **AUTH** | **Authentication Protocol**: Key exchange method used by clients (`PSK` for Pre-Shared Key, `MGT` for 802.1X Enterprise). |
+| **ESSID** | **Extended Service Set Identifier**: The human-readable network name broadcasted by the Access Point (e.g., `"Home_WiFi"`). |
+
+---
+
+### B) Client Stations Section (Lower Table)
+
+| Field | Technical Description & Field Meaning |
+| :--- | :--- |
+| **BSSID** | The MAC address of the Access Point to which the client station is currently associated (shows `(not associated)` if roaming). |
+| **STATION** | The physical MAC address of the connected client device (e.g., smartphone, laptop, IoT device). |
+| **PWR** | Signal strength of the client device relative to the attacker's sniffing card. |
+| **Rate** | Current transmission rate between the client station and the Access Point. |
+| **Lost** | The count/percentage of dropped packets lost during transmission over the air. |
+| **Frames** | Total count of data frames sent by this specific client device. |
+| **PROBES** | **Probe Requests**: List of network names (ESSIDs) previously saved in the client's preferred network list that the device is actively searching for over the air. |
+
+
 
 
 
