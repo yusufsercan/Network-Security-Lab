@@ -5,6 +5,7 @@ This module covers local network reconnaissance, ARP poisoning mechanics, packet
 ---
 
 ## 📝 Table of Contents
+0. [Conceptual Overview & Threat Model](#0-conceptual-overview--threat-model)
 1. [Network Reconnaissance & Host Discovery](#1-network-reconnaissance--host-discovery)
 2. [ARP Poisoning & Traffic Redirection Mechanics](#2-arp-poisoning--traffic-redirection-mechanics)
 3. [Deep Packet Inspection & Traffic Analysis with Wireshark](#3-deep-packet-inspection--traffic-analysis-with-wireshark)
