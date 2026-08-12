@@ -41,8 +41,8 @@ Before initiating any network-level analysis, accurate host discovery and servic
     * `netdiscover -p` : Passive mode; silently sniffs ARP requests without emitting packets to remain undetected.
 
 * **Port & Service Fingerprinting (`Nmap`):**
-  * **Service Version Detection:** `nmap -sV -p- 192.168.1.50` scans all 65,535 TCP ports to determine active services, banner strings, and daemon versions.
-  * **OS Fingerprinting:** `nmap -O 192.168.1.50` analyzes TCP/IP stack behavior (window size, TCP options, TTL values) to identify the target operating system.
+  * **Service Version Detection:** `nmap -sV -p- 92.168.x.x` scans all 65,535 TCP ports to determine active services, banner strings, and daemon versions.
+  * **OS Fingerprinting:** `nmap -O 92.168.x.x` analyzes TCP/IP stack behavior (window size, TCP options, TTL values) to identify the target operating system.
 
 ---
 
