@@ -9,7 +9,7 @@ This module covers local network reconnaissance, ARP poisoning mechanics, packet
 1. [Network Reconnaissance & Host Discovery](#1-network-reconnaissance--host-discovery)
 2. [ARP Poisoning & Traffic Redirection Mechanics](#2-arp-poisoning--traffic-redirection-mechanics)
 3. [Deep Packet Inspection & Traffic Analysis with Wireshark](#3-deep-packet-inspection--traffic-analysis-with-wireshark)
-4. [Automated Sniffing & Interception with Bettercap](#4Traffic-Interception-&-Protocol-Analysis-with-Bettercap)
+4. [Automated Sniffing & Interception with Bettercap](#4-Traffic-Interception-&-Protocol-Analysis-with-Bettercap)
 5. [Defensive Architecture & Network Mitigations](#5-defensive-architecture--network-mitigations)
 
 ---
