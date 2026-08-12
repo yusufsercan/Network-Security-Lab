@@ -1,4 +1,4 @@
-# 03. MITM & Network Traffic Analysis
+# 🕵️‍♂️ 03. MITM & Network Traffic Analysis
 
 This module covers local network reconnaissance, ARP poisoning mechanics, packet inspection, and Man-in-the-Middle (MITM) attack vectors within controlled lab environments.
 
