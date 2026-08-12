@@ -32,10 +32,6 @@ This repository contains practical network security experiments, protocol behavi
 - **Post-Exploitation Diagnostics:** Verifying system privilege contexts (`NT AUTHORITY\SYSTEM`), analyzing credential exposure risks, and reviewing session isolation limits.
 - **Web Application Labs:** Testing HTTP request methods (GET, POST, PUT, DELETE) and parameter validation behaviors (TryHackMe HTTP/REST API challenges).
 
-- ### ◆ 05. Reconnaissance & Network Inspection Tools
-- **Nmap Framework:** Active host discovery, TCP/UDP port scanning strategies, OS fingerprinting, and NSE (Nmap Scripting Engine) utilization.
-- **Wireshark Packet Analysis:** Live traffic capture, PCAP file analysis, display filter syntax (`tcp.flags`, `http.request`), and stream reassembly (Follow TCP Stream).
-
 ---
 
 ## 🛠️ Environment & Tooling
