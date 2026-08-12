@@ -25,12 +25,12 @@ This repository contains practical network security experiments, protocol behavi
 - **Traffic Analysis:** Packet inspection via Wireshark, automated sniffing with Bettercap, and PCAP logging.
 - **HTTPS & Mitigation:** HSTS Preload list barriers, SSLStrip limitations, and defensive controls (DAI, Static ARP, VPN).
 
-### ◆ 04. Vulnerability Assessment & Exploitation
-- **Targeted Scanning:** NSE script usage (`smb-vuln-ms17-010`) for precise service vulnerability identification.
-- **Linux Exploitation:** Exploiting Metasploitable2 backdoor vulnerabilities (vsftpd 2.3.4) for root shell access.
-- **Windows Exploitation:** MS17-010 (EternalBlue) exploitation on unpatched Windows 7 systems via SMBv1 (Port 445).
-- **Post-Exploitation & Meterpreter:** System privilege verification (`NT AUTHORITY\SYSTEM`), memory-injection, hash dumping (`hashdump`), and session interactions.
-- **Web Application Labs:** HTTP GET, POST, PUT, DELETE method manipulation and parameter tampering (TryHackMe HTTP/REST API challenges).
+### ◆ 04. Vulnerability Assessment & Proof of Concept (PoC) Analysis
+- **Targeted Scanning:** Utilizing Nse scripts (`smb-vuln-ms17-010`) to identify unpatched network services and assess patch compliance.
+- **Linux Service Security:** Technical analysis of legacy backdoor vulnerabilities (vsftpd 2.3.4) on isolated Metasploitable2 environments for threat modeling.
+- **Windows System Assessment:** Evaluating legacy SMBv1 protocol flaws (MS17-010 / EternalBlue) on unpatched Windows 7 targets and patch verification.
+- **Post-Exploitation Diagnostics:** Verifying system privilege contexts (`NT AUTHORITY\SYSTEM`), analyzing credential exposure risks, and reviewing session isolation limits.
+- **Web Application Labs:** Testing HTTP request methods (GET, POST, PUT, DELETE) and parameter validation behaviors (TryHackMe HTTP/REST API challenges).
 
 ---
 
