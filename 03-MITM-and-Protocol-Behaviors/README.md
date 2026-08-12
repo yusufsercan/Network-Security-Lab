@@ -14,6 +14,17 @@ This module covers local network reconnaissance, ARP poisoning mechanics, packet
 
 ---
 
+### 0. Conceptual Overview & Threat Model
+
+Before executing any network-level analysis, understanding the core distinction between the underlying protocols, design flaws, and resulting threat states is essential.
+
+* **Protocol vs. Threat Chain:**
+  * **ARP (Protocol):** A fundamental OSI Layer-2 communication protocol used to map IP addresses to physical MAC addresses (Not an attack).
+  * **Design Vulnerability:** Complete lack of authentication. Devices trust and process unsolicited ARP responses without verifying matching requests.
+  * **ARP Poisoning (Action):** The technique of broadcasting forged ARP packets to manipulate dynamic ARP caches across local endpoints.
+  * **MITM (Result State):** The operational condition achieved when bi-directional network traffic flows through an intermediate analyzer, enabling packet monitoring or modification.
+    
+
 ### 1. Network Reconnaissance & Host Discovery
 
 Before initiating any network-level analysis, accurate host discovery and service identification are essential to map the target environment without disruption.
