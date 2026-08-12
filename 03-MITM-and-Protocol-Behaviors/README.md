@@ -78,19 +78,19 @@ Wireshark allows security analysts to capture, decode, and analyze network frame
 
 ---
 
-### 4. Automated Sniffing & Interception with Bettercap
+### 4. Traffic Interception & Protocol Analysis with Bettercap
 
-Bettercap is a modern, modular framework designed to perform network attacks and monitoring tasks.
+Bettercap is a modular network inspection framework utilized to analyze real-time packet behavior, ARP cache mechanisms, and transport-layer encryption limits within isolated lab subnets.
 
-* **Module Configuration:**
-  * `net.probe on` : Automatically discovers live endpoints via ARP probing.
-  * `set arp.spoof.targets 192.168.1.50` : Specifies targeted IP addresses for selective poisoning.
-  * `arp.spoof on` : Initiates the ARP cache poisoning process.
-  * `net.sniff on` : Activates packet interception and credential parsing engine.
+* **Module Diagnostics & Environment Configuration:**
+  * `net.probe on` : Initiates active endpoint discovery across local subnet nodes using Layer-2 ARP probes.
+  * `set arp.spoof.targets <target_ip>` : Defines specified test IP endpoints within the isolated laboratory environment for traffic routing analysis.
+  * `arp.spoof on` : Activates dynamic ARP table redirection to observe packet bridge behavior.
+  * `net.sniff on` : Enables payload sniffing to identify unencrypted protocol leaks (e.g., HTTP POST parameters).
 
-* **Modern Cryptographic Barriers (HSTS & TLS 1.3):**
-  * **SSLStrip Limitations:** Legacy SSLStrip techniques attempt to downgrade `https://` links to `http://`. However, modern browsers enforce **HSTS (HTTP Strict Transport Security)**, which hardcodes mandatory HTTPS connections via preloaded browser lists.
-  * **Impact:** Attempts to intercept HSTS-protected domains result in non-bypassable browser security warnings (`NET::ERR_CERT_AUTHORITY_INVALID`).
+* **Cryptographic Security Limits (HSTS & TLS 1.3 Analysis):**
+  * **SSLStrip Security Barriers:** Legacy SSLStrip methods attempt to force downgrade `https://` requests to unencrypted `http://`. Modern web security protocols enforce **HSTS (HTTP Strict Transport Security)**, which hardcodes HTTPS compliance directly into browser preloaded lists.
+  * **Defensive Impact:** Attempts to intercept HSTS-enforced sessions are immediately blocked by modern user-agents, triggering non-bypassable certificates errors (`NET::ERR_CERT_AUTHORITY_INVALID`) and preserving user traffic integrity.
 
 ---
 
