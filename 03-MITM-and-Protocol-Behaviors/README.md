@@ -18,12 +18,17 @@ This module covers local network reconnaissance, ARP poisoning mechanics, packet
 
 Before executing any network-level analysis, understanding the core distinction between the underlying protocols, design flaws, and resulting threat states is essential.
 
+* **Man-in-the-Middle (MITM) Core Definition:**
+  * MITM is a positioning condition where an intermediary node places itself directly in the communication channel between two targets (e.g., Target Host ↔ Default Gateway).
+  * Both targets believe they are communicating directly with each other, while all request and response traffic is routed through, inspected, or modified by the intermediary.
+
 * **Protocol vs. Threat Chain:**
   * **ARP (Protocol):** A fundamental OSI Layer-2 communication protocol used to map IP addresses to physical MAC addresses (Not an attack).
   * **Design Vulnerability:** Complete lack of authentication. Devices trust and process unsolicited ARP responses without verifying matching requests.
   * **ARP Poisoning (Action):** The technique of broadcasting forged ARP packets to manipulate dynamic ARP caches across local endpoints.
-  * **MITM (Result State):** The operational condition achieved when bi-directional network traffic flows through an intermediate analyzer, enabling packet monitoring or modification.
-    
+  * **MITM (Result State):** The operational status achieved through poisoning, forcing network traffic to flow transparently through the intermediary interface.
+
+---
 
 ### 1. Network Reconnaissance & Host Discovery
 
