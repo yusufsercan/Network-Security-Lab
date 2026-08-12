@@ -39,10 +39,9 @@ Address Resolution Protocol (ARP) lacks identity verification, making local IPv4
     * *To Target:* "The Default Gateway's IP has my MAC address."
     * *To Gateway:* "The Target's IP has my MAC address."
 
-* **Kernel IP Forwarding (Traffic Bridge):**
-  * By default, operating systems drop packets not explicitly addressed to their network interface. To act as a transparent router without dropping client packets, kernel forwarding must be enabled:
-    * Linux command: `sysctl -w net.ipv4.ip_forward=1` or `echo 1 > /proc/sys/net/ipv4/ip_forward`
-  * *Operational Impact:* If IP forwarding is disabled during an ARP spoofing attack, target connectivity drops completely, causing a Denial of Service (DoS) rather than an interception session.
+* **Traffic Routing & Interception Bridge:**
+  * To route intermediate packets transparently between the target and the gateway without dropping client connections, IP forwarding mechanics are managed during active ARP spoofing sessions.
+  * *Operational Impact:* If traffic forwarding is not properly initialized during an ARP spoofing attack, target connectivity drops completely, causing an unintended Denial of Service (DoS) rather than a successful interception session.
 
 ---
 
