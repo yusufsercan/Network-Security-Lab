@@ -6,7 +6,7 @@ This module covers deep network enumeration mechanics, transport layer scanning 
 
 ---
 
-## Table of Contents
+## 📝 Table of Contents
 1. [Core Theory: Network Scanning & Port Mechanics](#1-core-theory-network-scanning--port-mechanics)
 2. [Nmap vs. ARP Scanning (Netdiscover)](#2-nmap-vs-arp-scanning-netdiscover)
 3. [Port States & Transport Layer Interpretation](#3-port-states--transport-layer-interpretation)
