@@ -49,3 +49,49 @@ This module covers deep network enumeration mechanics, transport layer scanning 
   |  filtered        | Firewall / filter drops probe; state indeterminate.|
   |  open|filtered   | No response received on UDP / special TCP probes.  |
   +------------------+----------------------------------------------------+
+
+
+
+  ---
+
+## 4. Critical Well-Known Ports Reference
+
+| Port Number | Default Service | Protocol Type | Security Risk & Inspection Focus |
+| :--- | :--- | :--- | :--- |
+| **20 / 21** | FTP | Plaintext | Unencrypted file transfer; plaintext creds, anonymous login risk. |
+| **22** | SSH | Encrypted | Secure remote administration; public key/password authentication. |
+| **23** | Telnet | Plaintext | **High Risk:** Transmits credentials and shell data in cleartext. |
+| **25** | SMTP | Plaintext / STARTTLS | Mail delivery; user enumeration vectors (`VRFY`, `EXPN`, `RCPT TO`). |
+| **53** | DNS | UDP / TCP | Domain resolution; DNS zone transfer (`AXFR`) exposure. |
+| **67 / 68** | DHCP | UDP | Dynamic network configuration; rogue DHCP / starvation attacks. |
+| **80** | HTTP | Plaintext | Web service; vulnerable to sniffing and web app attack vectors. |
+| **110** | POP3 | Plaintext | Post office mail retrieval; plaintext credentials. |
+| **137–139** | NetBIOS | UDP / TCP | Windows legacy name resolution and session management. |
+| **143** | IMAP | Plaintext | Mail synchronization; unencrypted credential exchange. |
+| **389 / 636** | LDAP / LDAPS | Plaintext / SSL | Directory access; user and domain structure queries. |
+| **443** | HTTPS | Encrypted (TLS) | Encrypted web communication; certificate inspections. |
+| **445** | SMB (microsoft-ds) | TCP | Direct Windows file/resource sharing; high-profile CVE targets. |
+| **989 / 990** | FTPS | Encrypted (TLS) | Secure FTP control and data channels. |
+
+---
+
+## 5. Target Specification & Syntax Rules
+
+Nmap is flag-order agnostic (parameters are parsed before execution), but arguments requiring values must stay paired:
+
+```bash
+# Valid syntax patterns (Order does not alter execution):
+nmap -p- -sV -T4 192.168.50.136
+nmap -sV -T4 -p- 192.168.50.136
+
+# Correct parameter binding:
+nmap -p 80,443 -sV 192.168.50.136      # Port arguments directly follow -p
+nmap -iL targets.txt -T4               # Target file directly follows -iL
+
+# Target Definition Patterns:
+nmap 192.168.1.1 192.168.1.50          # Specific host list
+nmap 192.168.1.1-254                   # IP Range sweep
+nmap 192.168.1.0/24                    # Subnet CIDR block
+nmap -iL targets.txt                   # Input from target file
+nmap 192.168.1.0/24 --exclude 192.168.1.1 # Subnet scan excluding gateway
+```
