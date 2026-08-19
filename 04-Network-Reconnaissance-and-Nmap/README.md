@@ -93,3 +93,44 @@ nmap 192.0.2.0/24                      # Subnet CIDR block
 nmap -iL targets.txt                   # Input from target file
 nmap 192.0.2.0/24 --exclude 192.0.2.1  # Subnet scan excluding gateway
 ```
+
+## 6. Comprehensive Parameter & Flag Directory
+
+### Scan Techniques (`-s*`)
+* **`-sS` (TCP SYN Stealth Scan):** Transmits raw `SYN` packets. Upon receiving `SYN/ACK`, immediately sends `RST` to tear down the connection without completing the 3-Way Handshake. Requires root privileges.
+* **`-sT` (TCP Connect Scan):** Completes the full 3-Way Handshake (`SYN -> SYN/ACK -> ACK`). Default unprivileged scan; highly visible in system audit logs.
+* **`-sU` (UDP Scan):** Audits connectionless UDP sockets by awaiting ICMP port unreachable replies (slow).
+* **`-sn` (Host Discovery):** Disables port scanning; validates whether targets are alive.
+
+### Port Specifications (`-p`)
+* **`-p 80,443`:** Targets explicit ports.
+* **`-p 1-1000`:** Targets an exact numerical port range.
+* **`-p-`:** Audits the complete port spectrum (1 through 65535).
+* **`-F`:** Fast Scan mode (Scans the top 100 most common ports).
+* **`--top-ports <n>`:** Scans the top $n$ ports by database frequency.
+
+### Version & OS Detection
+* **`-sV`:** Probes open ports with application banners and interrogation payloads to extract software versions.
+* **`-O`:** Uses TCP/IP stack fingerprinting (window size, ISN analysis, option padding) to determine underlying OS and kernel.
+* **`-A`:** Aggressive Mode (Executes `-sV`, `-O`, traceroute, and default NSE scripts concurrently).
+
+### Timing & Performance (`-T`)
+* **`-T0` (Paranoid) / `-T1` (Sneaky):** Serialized, high-delay probes designed for IDS/IPS evasion.
+* **`-T2` (Polite) / `-T3` (Normal):** Bandwidth-conservative default pacing.
+* **`-T4` (Aggressive):** Recommended standard for responsive local and lab networks.
+* **`-T5` (Insane):** Maximum packet rate (Higher probability of dropped responses on congested networks).
+
+---
+
+## 7. Firewall Evasion & Host Discovery Mechanics
+
+Standard ping requests (`ICMP Echo`) are frequently filtered by border firewalls, causing standard scans to treat responsive hosts as offline.
+
+```bash
+# Force scan without preliminary ping check:
+nmap -Pn 10.10.10.10
+
+# Disable reverse DNS lookups to accelerate sweep:
+nmap -n -Pn 10.10.10.10
+```
+
