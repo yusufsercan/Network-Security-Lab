@@ -2,7 +2,7 @@
 
 This module covers local network reconnaissance, ARP poisoning mechanics, packet inspection, and Man-in-the-Middle (MITM) attack vectors within controlled lab environments.
 
-Note / Disclaimer: The contents of this module consist purely of personal study notes, laboratory observations, and quick-reference cheatsheets recorded during my cybersecurity and engineering training. They are compiled solely for self-development and personal revision.
+> ⚠️ **Note / Disclaimer:** The contents of this module consist purely of personal study notes, laboratory observations, and quick-reference cheatsheets recorded during my cybersecurity and engineering training. They are compiled solely for self-development and personal revision.
 
 ---
 
