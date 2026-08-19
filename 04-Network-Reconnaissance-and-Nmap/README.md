@@ -134,3 +134,24 @@ nmap -Pn 10.10.10.10
 nmap -n -Pn 10.10.10.10
 ```
 
+## 8. Practical Lab Walkthrough: Metasploitable2 Target Analysis
+
+Target Environment: `10.10.10.10` (Metasploitable2 Linux VM)
+
+```bash
+# Recommended Full Audit Baseline Command:
+nmap -v -sS -A -T4 10.10.10.10
+```
+================================================================================
+PORT     STATE SERVICE     VERSION
+21/tcp   open  ftp         vsftpd 2.3.4
+22/tcp   open  ssh         OpenSSH 4.7p1 Debian 8ubuntu1 (protocol 2.0)
+23/tcp   open  telnet      Linux telnetd
+25/tcp   open  smtp        Postfix smtpd
+53/tcp   open  domain      ISC BIND 9.4.2
+80/tcp   open  http        Apache httpd 2.2.8 ((Ubuntu) DAV/2)
+139/tcp  open  netbios-ssn Samba smbd 3.X - 4.X (workgroup: WORKGROUP)
+445/tcp  open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
+1524/tcp open  bindshell   Metasploitable root shell
+================================================================================
+
