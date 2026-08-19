@@ -1,4 +1,4 @@
-# 🕵️‍♂️ 04. Network Reconnaissance & Port Scanning (Nmap)
+#🕵️‍♂️ 04. Network Reconnaissance & Port Scanning (Nmap)
 
 This module covers deep network enumeration mechanics, transport layer scanning techniques, timing heuristics, service version detection, and vulnerability discovery using the Network Mapper (Nmap) suite against isolated lab targets (Metasploitable2).
 
