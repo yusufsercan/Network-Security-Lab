@@ -2,7 +2,7 @@
 
 This module covers wireless network interface mechanics, RF spectrum monitoring, packet capture procedures, and wireless security analysis using the Aircrack-ng suite within isolated virtualized environments.
 
-> **Note / Disclaimer:** The contents of this module consist purely of personal study notes, laboratory observations, and quick-reference cheatsheets recorded during my cybersecurity training. They are compiled solely for self-development and personal revision, and do not claim to be authoritative academic documentation or official reference materials.
+> ⚠️ **Note / Disclaimer:** The contents of this module consist purely of personal study notes, laboratory observations, and quick-reference cheatsheets recorded during my cybersecurity training. They are compiled solely for self-development and personal revision, and do not claim to be authoritative academic documentation or official reference materials.
 
 ---
 
