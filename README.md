@@ -25,7 +25,7 @@ This repository contains practical network security experiments, protocol behavi
 - **Traffic Analysis:** Packet inspection via Wireshark, automated sniffing with Bettercap, and PCAP logging.
 - **HTTPS & Mitigation:** HSTS Preload list barriers, SSLStrip limitations, and defensive controls (DAI, Static ARP, VPN).
 
-◆ 04. Network Reconnaissance & Port Scanning (Nmap)
+### ◆ 04. Network Reconnaissance & Port Scanning (Nmap)
 - **Architecture & Mechanics:** Host discovery lifecycles, TCP stateful flag behaviors (SYN vs. Connect), and UDP inspection constraints.
 - **Scanning Methodologies:** Full spectrum auditing (-p-), timing template tuning (T0–T5), evasion heuristics (-Pn, -n, fragmented packets), and target parsing.
 - **Service & OS Fingerprinting:** Banner grabbing, application version extraction (-sV), TCP/IP stack fingerprinting (-O), and aggressive scanning (-A).
