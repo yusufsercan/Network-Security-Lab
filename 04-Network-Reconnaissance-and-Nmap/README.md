@@ -140,7 +140,7 @@ Target Environment: `10.10.10.10` (Metasploitable2 Linux VM)
 
 ```bash
 # Recommended Full Audit Baseline Command:
-nmap -v -sS -A -T4 10.10.10.10,
+nmap -v -sS -A -T4 10.10.10.10
 
 ================================================================================
 PORT     STATE SERVICE     VERSION
@@ -154,7 +154,6 @@ PORT     STATE SERVICE     VERSION
 445/tcp  open  netbios-ssn Samba smbd 3.0.20-Debian (workgroup: WORKGROUP)
 1524/tcp open  bindshell   Metasploitable root shell
 ================================================================================
-
 ```
 
 
