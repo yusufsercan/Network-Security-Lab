@@ -156,5 +156,18 @@ PORT     STATE SERVICE     VERSION
 ================================================================================
 ```
 
+## 9. NSE Script Analysis & Initial Exploitation Surface
+
+### FTP Reconnaissance on Port 21:
+```text
+PORT   STATE SERVICE VERSION
+21/tcp open  ftp     vsftpd 2.3.4
+|_ftp-anon: Anonymous FTP login allowed (FTP code 230)
+| ftp-syst: 
+|   STAT: 
+|   Logged in as ftp
+|   TYPE: ASCII
+|   Control connection is plain text / Data connections will be plain text
+```
 
 
