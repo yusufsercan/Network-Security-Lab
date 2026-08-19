@@ -25,12 +25,12 @@ This repository contains practical network security experiments, protocol behavi
 - **Traffic Analysis:** Packet inspection via Wireshark, automated sniffing with Bettercap, and PCAP logging.
 - **HTTPS & Mitigation:** HSTS Preload list barriers, SSLStrip limitations, and defensive controls (DAI, Static ARP, VPN).
 
-### ◆ 04. Vulnerability Assessment & Proof of Concept (PoC) Analysis
-- **Targeted Scanning:** Utilizing Nse scripts (`smb-vuln-ms17-010`) to identify unpatched network services and assess patch compliance.
-- **Linux Service Security:** Technical analysis of legacy backdoor vulnerabilities (vsftpd 2.3.4) on isolated Metasploitable2 environments for threat modeling.
-- **Windows System Assessment:** Evaluating legacy SMBv1 protocol flaws (MS17-010 / EternalBlue) on unpatched Windows 7 targets and patch verification.
-- **Post-Exploitation Diagnostics:** Verifying system privilege contexts (`NT AUTHORITY\SYSTEM`), analyzing credential exposure risks, and reviewing session isolation limits.
-- **Web Application Labs:** Testing HTTP request methods (GET, POST, PUT, DELETE) and parameter validation behaviors (TryHackMe HTTP/REST API challenges).
+◆ 04. Network Reconnaissance & Port Scanning (Nmap)
+- **Architecture & Mechanics:** Host discovery lifecycles, TCP stateful flag behaviors (SYN vs. Connect), and UDP inspection constraints.
+- **Scanning Methodologies:** Full spectrum auditing (-p-), timing template tuning (T0–T5), evasion heuristics (-Pn, -n, fragmented packets), and target parsing.
+- **Service & OS Fingerprinting:** Banner grabbing, application version extraction (-sV), TCP/IP stack fingerprinting (-O), and aggressive scanning (-A).
+- **Nmap Scripting Engine (NSE):** Automated Lua-based vulnerability detection (`--script vuln`), anonymous credential testing, and plaintext protocol leak analysis.
+- **Target Environment Analysis:** Practical exploitation reconnaissance against Metasploitable2 (FTP vsftpd 2.3.4 backdoor surface mapping and plain-text exposure).
 
 ---
 
