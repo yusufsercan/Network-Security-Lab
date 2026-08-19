@@ -41,14 +41,12 @@ This module covers deep network enumeration mechanics, transport layer scanning 
 
 ## 3. Port States & Transport Layer Interpretation
 
-  +------------------+----------------------------------------------------+
-  |    Port State    |                  Network Behavior                  |
-  +------------------+----------------------------------------------------+
-  |  open            | Application is actively listening and accepting.   |
-  |  closed          | Host responds with RST/ACK; no service bound.      |
-  |  filtered        | Firewall / filter drops probe; state indeterminate.|
-  |  open|filtered   | No response received on UDP / special TCP probes.  |
-  +------------------+----------------------------------------------------+
+| Port State | Network Behavior |
+| :--- | :--- |
+| **`open`** | Application is actively listening and accepting connections. |
+| **`closed`** | Host responds with RST/ACK; port is reachable but no service is bound. |
+| **`filtered`** | Firewall / packet filter drops probe; state cannot be determined. |
+| **`open\|filtered`** | No response received on UDP or special flag probes (Xmas, FIN, NULL). |
 
 
 
