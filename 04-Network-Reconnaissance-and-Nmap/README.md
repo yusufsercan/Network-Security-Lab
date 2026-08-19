@@ -79,11 +79,11 @@ Nmap is flag-order agnostic (parameters are parsed before execution), but argume
 
 ```bash
 # Valid syntax patterns (Order does not alter execution):
-nmap -p- -sV -T4 192.168.50.136
-nmap -sV -T4 -p- 192.168.50.136
+nmap -p- -sV -T4 192.168.1.100
+nmap -sV -T4 -p- 192.168.1.100
 
 # Correct parameter binding:
-nmap -p 80,443 -sV 192.168.50.136      # Port arguments directly follow -p
+nmap -p 80,443 -sV 192.168.1.100      # Port arguments directly follow -p
 nmap -iL targets.txt -T4               # Target file directly follows -iL
 
 # Target Definition Patterns:
