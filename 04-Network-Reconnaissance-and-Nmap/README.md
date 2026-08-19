@@ -79,17 +79,17 @@ Nmap is flag-order agnostic (parameters are parsed before execution), but argume
 
 ```bash
 # Valid syntax patterns (Order does not alter execution):
-nmap -p- -sV -T4 192.168.1.100
-nmap -sV -T4 -p- 192.168.1.100
+nmap -p- -sV -T4 192.0.2.10
+nmap -sV -T4 -p- 192.0.2.10
 
 # Correct parameter binding:
-nmap -p 80,443 -sV 192.168.1.100      # Port arguments directly follow -p
+nmap -p 80,443 -sV 192.0.2.10          # Port arguments directly follow -p
 nmap -iL targets.txt -T4               # Target file directly follows -iL
 
 # Target Definition Patterns:
-nmap 192.168.1.1 192.168.1.50          # Specific host list
-nmap 192.168.1.1-254                   # IP Range sweep
-nmap 192.168.1.0/24                    # Subnet CIDR block
+nmap 192.0.2.10 192.0.2.20             # Specific host list
+nmap 192.0.2.1-254                     # IP Range sweep
+nmap 192.0.2.0/24                      # Subnet CIDR block
 nmap -iL targets.txt                   # Input from target file
-nmap 192.168.1.0/24 --exclude 192.168.1.1 # Subnet scan excluding gateway
+nmap 192.0.2.0/24 --exclude 192.0.2.1  # Subnet scan excluding gateway
 ```
