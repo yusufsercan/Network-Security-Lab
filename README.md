@@ -1,4 +1,4 @@
-# 🛡️ Network Security & Protocol Analysis Lab 
+# 🛡️ Network Security & Protocol Analysis Lab  
 
 This repository contains practical network security experiments, protocol behavior analyses, packet inspection reports, and defensive architecture notes developed during my personal study sessions.
 
